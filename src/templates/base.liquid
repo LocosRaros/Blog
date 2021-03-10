@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    </head>
+    <body>
+        <div class="pa4 pt5-ns ph7-l reader-bar-start">
+            <header>
+                <h1>{{ title }}</h1>
+                <a href="#" class="link dim">
+                    <img class="w2 v-mid br2" src="https://www.countryflags.io/{{country}}/flat/64.png">
+                </a>
+                <time class="f6 mb2 dib ttu tracked">
+                    <small>{{ published | date }}</small>
+                </time>
+                <div class="mv2">
+                    {% for tag in tags %}
+                    <a href="/tags/{{ tag }}" class="link dim mid-gray">
+                        <small class="f6 bg-light-gray pa1 ttc">{{tag}}</small>
+                    </a>
+                    {% endfor %}
+                </div>
+            </header>
+            <article class="center mt4">
+                {{content}}
+            </article>
+            {% readerBar "3px", "#EEE", "#AAA" %}
+        </div>
+    </body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Inconsolata:400');
+        @import url('https://fonts.googleapis.com/css?family=Duru+Sans:400');
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Inconsolata', monospace;
+            font-weight: 400;
+        }
+
+        p {
+            font-family: 'Duru Sans', sans-serif;
+        }
+    </style>
+<html>
+

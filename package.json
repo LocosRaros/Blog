@@ -1,0 +1,13 @@
+{
+  "name": "locosraros.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  },
+  "scripts": {
+    "start": "eleventy --input='src' --output='dist' --serve",
+    "build": "eleventy --input='src' --output='dist'"
+  }
+}

@@ -1,0 +1,21 @@
+---
+layout: base
+pagination:
+  data: collections.all
+  size: 5
+  alias: posts
+---
+
+{%- for post in posts -%}
+
+<div class="pa4 pt5-ns ph7-l">
+  <header>
+    <h2>{{ post.data.published | date }}</h2>
+    <img class="w2 v-mid br2" src="https://www.countryflags.io/{{post.data.location.countryCode}}/flat/64.png">
+    <span>{{ post.data.location.name }}</span>
+  </header>
+  <article class="center mt4">
+    {{ post.templateContent  }}
+  </article>
+</div>
+{%- endfor -%}

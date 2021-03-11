@@ -1,0 +1,14 @@
+---
+layout: base
+---
+
+<div class="pa4 pt5-ns ph7-l">
+  <header>
+    <h2>{{ published | date }}</h2>
+    <img class="w2 v-mid br2" src="https://www.countryflags.io/{{location.countryCode}}/flat/64.png">
+    <span>{{ location.name }}</span>
+  </header>
+  <article class="center mt4">
+    {{content}}
+  </article>
+</div>

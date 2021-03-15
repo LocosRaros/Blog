@@ -2,13 +2,37 @@
 layout: base
 ---
 
-<div class="pa4 pt5-ns ph7-l">
-  <header>
-    <h2>{{ published | date }}</h2>
-    <img class="w2 v-mid br2" src="https://www.countryflags.io/{{location.countryCode}}/flat/64.png">
-    <span>{{ location.name }}</span>
-  </header>
-  <article class="center mt4">
-    {{content}}
-  </article>
-</div>
+<article class="ba b--light-gray bg-white pa4-ns pa5-l">
+    <section>
+        <h1>{{ title }}</h1>
+        <h2 class="gray">{{ subTitle }}</h2>
+        <br />
+        <small class="ttu">
+            {{ published | date }}
+        </small>
+    </section>
+    <hr class="light-gray mt4" />
+    <br />
+    <div class="w-100 img-hover-zoom">
+        <img class="w-100 mv3" src="https://image.freepik.com/vector-gratis/fondo-abstracto-banner-punteado_1035-18160.jpg" />
+    </div>
+    <p>
+        {{ content }}
+    </p>
+</article>
+
+<style>
+.img-hover-zoom {
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+</style>

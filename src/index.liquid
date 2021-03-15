@@ -6,34 +6,29 @@ pagination:
   alias: posts
 ---
 
-<nav class="pa3 ph6-l shadow-1 fixed bg-white o-90 w-100">
-    <a href="/" class="link dim f4 blue">locosraros</a>
-    <a href="#" class="link black dim fr">Nosotros</a>
-</nav>
-<div class="pa4 ph6-l"></div> <!-- Offset space -->
-
-
-<br />
-
-<div class="bg-light-gray tc pa2">
-    <h1>Marzo, 2021</h1>
-</div>
-
 {%- for post in posts -%}
 
-<article id={{ post.url }} class="pa4 pt5-ns ph7-l">
-    <h2>
-        <a href="{{ post.url  }}" class="link black">
-            {{ post.data.published | date }}
-        </a>
-    </h2>
-  <img class="w2 v-mid br2" src="https://www.countryflags.io/{{post.data.location.countryCode}}/flat/64.png">
-  <span>{{ post.data.location.name }}</span>
-  {{ post.templateContent  }}
-</article>
+    <article id={{ post.url }}" class="mv4  ba b--light-gray bg-white pa2 pa5-l">
+        <h2>
+            <a href="{{ post.url  }}" class="link black">
+                {{ post.data.published | date }}
+            </a>
+        </h2>
+        <img class="w2 v-mid br2" src="https://www.countryflags.io/{{post.data.location.countryCode}}/flat/64.png">
+        <span>{{ post.data.location.name }}</span>
+        <p>
+            {{ post | excerpt }}
+        </p>
 
-<div class="tc f3 light-silver tracked-mega">. . .</div>
+        <br />
+
+        <footer class="mv2 ttc">
+            <a href="{{ post.url  }}" class="link f6 black ba b--light-gray pa3 almost-black">
+                Continue reading
+            </a>
+        </footer>
+
+    </article>
+
 {%- endfor -%}
 
-<br />
-<br />

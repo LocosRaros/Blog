@@ -6,29 +6,40 @@ pagination:
   alias: posts
 ---
 
-{%- for post in posts -%}
+<nav class="fixed bg-white pa2 pa3-l w-100 o-90">
+    <a href="/" class="link black br pr3 b">LocosRaros</a>
+    <section class="di ttu f6 ml3">
+        <a href="#" class="link gray mh1 dim">Sobre nosotros</a>
+    </section>
+</nav>
 
-    <article id={{ post.url }}" class="mv4  ba b--light-gray bg-white pa2 pa5-l">
-        <h2>
-            <a href="{{ post.url  }}" class="link black">
-                {{ post.data.published | date }}
-            </a>
-        </h2>
-        <img class="w2 v-mid br2" src="https://www.countryflags.io/{{post.data.location.countryCode}}/flat/64.png">
-        <span>{{ post.data.location.name }}</span>
-        <p>
-            {{ post | excerpt }}
-        </p>
+<section class="pv5-l ph6-l flex flex-wrap">
 
-        <br />
+    <section class="fl w-100 w-30-l mv4 tc tl-l ph3 ph5-l near-black">
+        <header>
+            <h1>LocosRaros</h1>
+            <p>Lorem</p>
+        </header>
+        <hr class="white" />
+        <article class="pv3-l">
+            <h2>About</h2>
+            <p>Somos una pareja de locos raros viajando el mundo buscando recuerdos.</p>
+        </article>
+        <small class="light-silver">&#169; Jesse Kelly, 2021</small>
+    </section>
 
-        <footer class="mv2 ttc">
-            <a href="{{ post.url  }}" class="link f6 black ba b--light-gray pa3 almost-black">
-                Continue reading
-            </a>
-        </footer>
+    <section class="fl w-100 w-70-l mv4">
+        {%- for post in posts -%}
+            <article id={{ post.url }}" class="br2 mb4 ba b--light-gray bg-white pa2 pa4-l">
+                <h1>{{ post.data.title }}</h1>
+                <small>{{ post.data.published | date }}</small>
+                <br />
+                <br />
+                <hr class="light-gray" />
+                <img class="w-100 br1 mv3" src="{{ post.data.banner }}"/>
+                <p>{{ post | excerpt }}</p>
+            </article>
+        {%- endfor -%}
+    </section>
 
-    </article>
-
-{%- endfor -%}
-
+</section>

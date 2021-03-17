@@ -9,18 +9,11 @@ pagination:
 <nav class="fixed bg-white pa2 pa3-l w-100 o-90 ba b--light-gray">
     <a href="/" class="link black br pr3 b">LocosRaros</a>
     <section class="di ttu f6 ml3">
-        <a href="#" class="link gray mh1 dim">Sobre nosotros</a>
+        <a href="#" class="link gray mh1 dim">Contactanos</a>
     </section>
 </nav>
 
 <style>
- .sticky {
-     position: sticky;
- }
-
- .self-start {
-     align-self: flex-start;
- }
 </style>
 
 <section class="pv5-l ph6-l flex flex-wrap">
@@ -60,8 +53,18 @@ pagination:
                 <hr class="light-gray" />
                 <img class="w-100 br1 mv3" src="{{ post.data.banner }}"/>
                 <p>{{ post | excerpt }}</p>
+                <a href="{{ post.url }}" class="link mv4 db orange dim">Keep reading</a>
             </article>
         {%- endfor -%}
     </section>
 
 </section>
+
+
+
+
+
+
+
+
+

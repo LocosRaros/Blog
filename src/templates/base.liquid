@@ -3,10 +3,31 @@
         <title>{{  title | default: "LocosRaros" }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/headroom.js@0.12.0/dist/headroom.min.js"></script>
     </head>
     <body class="bg-g-gray bg--fixed">
+        <nav class="fixed bg-white pa2 pa3-l w-100 o-90 ba b--light-gray trans-o">
+            <a href="/" class="link black br pr3 b">LocosRaros</a>
+            <section class="di ttu f6 ml3">
+                <a href="#" class="link gray mh1 dim">Contactanos</a>
+            </section>
+        </nav>
+
         {{ content }}
     </body>
+
+    <script>
+     const nav = document.querySelector("nav");
+     const headroomOptions = {
+         classes: {
+             unpinned: "o-0 z--1", 
+             notTop: "shadow-1" 
+         }
+     }
+     const headroom = new Headroom(nav, headroomOptions);
+     headroom.init();
+    </script>
+
     <style>
      @import url('https://fonts.googleapis.com/css?family=Inconsolata:400');
      @import url('https://fonts.googleapis.com/css?family=Duru+Sans:400');
@@ -52,14 +73,14 @@
          background-attachment: fixed;
      }
 
+     .trans-o {
+         transition: opacity .25s ease-in-out;
+         -moz-transition: opacity .25s ease-in-out;
+         -webkit-transition: opacity .25s ease-in-out;
+     }
+
+     .z--1 {
+         z-index: -1;
+     }
     </style>
 <html>
-
-
-
-
-
-
-
-
-
